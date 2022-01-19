@@ -1,0 +1,17 @@
+[
+    {
+        "title": "crayon",
+        "price": 250,
+        "id": 1,
+    },
+    {
+        "title": "goma",
+        "price": 100,
+        "id": 2,
+    },
+    {
+        "title": "mochila",
+        "price": 666,
+        "id": 3,
+    }
+]
