@@ -13,7 +13,7 @@ class Contenedor{
                 if (error) {
                     console.log(`error ${error}`);
                 } else {
-                    return JSON.parse(resp, null, 2);
+                    return JSON.parse(resp);
                 }
             })
             return contenido
@@ -23,15 +23,15 @@ class Contenedor{
     }
 
     getProductRandom() {
-        const listaProductos = JSON.parse(this.getAll(), null, 2); // me da un error cuando le agrego el JSON.parse podria ayudarme a resolverlo, si descomenta las ultimas dos lineas y hace node ./producto.js en la consola puede ver el error. 
-        const nroRandom = Math.round(Math.random()*listaProductos.length)
+        const listaProductos = JSON.parse(this.getAll()); // me da un error cuando le agrego el JSON.parse podria ayudarme a resolverlo, si descomenta las ultimas dos lineas y hace node ./producto.js en la consola puede ver el error. 
+        const nroRandom = Math.floor(Math.random()*listaProductos.length);
         return listaProductos[nroRandom];
     }
 
 
 }
 
-// let prueba = new Contenedor("./productos.txt")
-// prueba.getProductRandom()
+let prueba = new Contenedor("./productos.txt")
+prueba.getProductRandom()
 
 module.exports = Contenedor;
